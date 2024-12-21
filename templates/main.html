@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Header Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: transparent;">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#profile" onclick="scrollToSection('profile')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" onclick="scrollToSection('about')">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects" onclick="scrollToSection('projects')">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills" onclick="scrollToSection('skills')">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" onclick="scrollToSection('contact')">Contact</a>
+                </li>              
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="container">
+        <div class="row">
+            <!-- Frame 1 -->
+            <div class="mt-4" id="profile">
+                <div class="text-content">
+                    <p>Hello, I'm<br>Chandika Purna Revanth</p>
+                    <p>AI/ML Enthusiast | Python Developer | Designer</p>
+                    <a href="#projects" class="btn">View My Work</a>
+                </div>
+            </div>
+            <div id="profile-image"  class="mt-4">
+              <img id="profile-image" class="image" src="../static/images/download.jpg" alt="Revanth" onclick="openImageModal('images/download.jpg')">
+            </div>
+        </div>
+        <div class="mt-4" id="about">
+            <h1 class="text-center">About Me</h1>
+            <p class="text-center">
+                I'm a student specializing in Artificial Intelligence and Machine Learning, passionate about creating intelligent solutions and designing user-friendly applications. 
+                I am deeply passionate about building innovative solutions that can make a meaningful impact on society. My curiosity drives me to explore new ideas, and I'm always eager to learn and create. 
+                With a strong desire to contribute positively, I'm also interested in starting my own startup, where I can bring my vision to life and develop technologies that can benefit people on a larger scale.
+            </p>
+            
+            <h1 class="text-center">Achievements</h1>
+            <div class="achievement-grid">
+                <img src="../static/images/image1.jpg" alt="Achievement 1" onclick="openImageModal('../static/images/image1.jpg')">
+                <img src="../static/images/image2.jpg" alt="Achievement 2" onclick="openImageModal('../static/images/image2.jpg')">
+                <img src="../static/images/image3.jpg" alt="Achievement 3" onclick="openImageModal('../static/images/image3.jpg')">
+                <img src="../static/images/image4.jpg" alt="Achievement 4" onclick="openImageModal('../static/images/image4.jpg')">
+                <img src="../static/images/image5.jpg" alt="Achievement 5" onclick="openImageModal('../static/images/image5.jpg')">
+                <img src="../static/images/image6.jpg" alt="Achievement 6" onclick="openImageModal('../static/images/image6.jpg')">
+                <img src="../static/images/image7.jpg" alt="Achievement 7" onclick="openImageModal('../static/images/image7.jpg')">
+                <img src="../static/images/image8.jpg" alt="Achievement 8" onclick="openImageModal('../static/images/image8.jpg')">
+                <img src="../static/images/image9.jpg" alt="Achievement 9" onclick="openImageModal('../static/images/image9.jpg')">
+            </div>
+        
+            <!-- Modal for Image Preview -->
+            <div id="imageModal" class="modal" style="display: none;">
+                <span class="close" onclick="closeModal()">&#x2716;</span>
+                <img id="modalImage" class="modal-content">
+            </div>
+        </div>
+        
+        <div class="mt-4" id="projects">
+            <h1 class="text-center">Projects</h1>
+            <div class="project-grid">
+                <div class="project-card" style="background-image: url('../static/images/vqa.png');">
+                    <h3>Visual Questioning Answering</h3>
+                    <p>Visual Question Answering (VQA) is an AI task where a system is designed to answer questions about visual content, such as images or videos. It combines computer vision and natural language processing to interpret visual information and provide accurate, contextually relevant answers to questions based on that content.</p>
+                    <a href="https://github.com/Revanth1310/vqa.git" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card" style="background-image: url('../static/images/chatbot.png');">
+                    <h3>Chatbot</h3>
+                    <p>A chatbot is an AI-driven software application designed to simulate conversation with users, either through text or voice. It can automate responses, answer queries, and perform tasks by understanding and interpreting user inputs, providing real-time assistance and interaction across various platforms, such as websites, messaging apps, and customer support systems.</p>
+                    <p>View on GitHub</p>
+                    &nbsp&nbsp<a href="https://github.com/Revanth1310/AI_telegram-bot.git">Telegram Bot</a><br>
+                    &nbsp&nbsp<a href="https://github.com/Revanth1310/chatbot.git">Bot Using NLP</a>
+                </div>
+                <div class="project-card" style="background-image: url('../static/images/detection.jpg');">
+                    <h3>Object Detection</h3>
+                    <p>
+                        Object detection is a computer vision technique that identifies and locates objects within an image or video. It combines classification and localization by detecting various objects, assigning them labels, and marking their positions with bounding boxes. This technology is widely used in applications such as surveillance, autonomous vehicles, and image analysis.</p>
+                    <a href="https://github.com/Revanth1310/object-detection.git" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card" style="background-image: url('../static/images/voting.jpeg');">
+                    <h3>Online Election System</h3>
+                    <p>
+                        An online election system is a digital platform that enables the secure and efficient conduct of elections over the internet. It allows voters to cast their ballots remotely, with features like voter authentication, secure vote transmission, and real-time vote tallying. These systems aim to increase voter participation, reduce costs, and provide accurate, transparent, and timely election results while maintaining election integrity.</p>
+                    <a href="https://github.com/Revanth1310/Election.git" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4" id="skills">
+            <h1 class="text-center">Skills</h1>
+            
+            <div class="d-flex justify-content-center flex-wrap">
+                <img src="../static/images/python.jpg" alt="Python" class="m-2">
+                <img src="../static/images/ml.jpg" alt="Machine Learning" class="m-2">
+                <img src="../static/images/pandas.png" alt="Pandas" class="m-2" style="height: 20vh;">
+                <img src="../static/images/numpy.png" alt="Numpy" class="m-2" style="height: 20vh;">
+                <img src="../static/images/keras.jpg" alt="Keras" class="m-2" style="height: 20vh;">
+                <img src="../static/images/olo.jpg" alt="Olo" class="m-2" style="height: 20vh;">
+            </div>
+        
+            <br><br><hr>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="mt-4" id="contact">
+                <h1 class="text-center">Contact Me</h1>
+                <div class="row">
+                    <!-- Left Side - Contact Info -->
+                    <div class="col-md-6">
+                        <h3>Contact Info</h3>
+                        <a href="mailto:revanthchandika@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you.">
+                            <img src="../static/images/email.png" alt="Email Icon"> revanthchandika@gmail.com
+                        </a><br>
+                        <a href="tel:+916302321665">
+                            <img src="../static/images/phone.png" alt="Phone Icon"> +91 6302321665
+                        </a><br>
+                        <a>
+                            <img src="../static/images/location.jpeg" alt="Location Icon">
+                            2-138, Chittipalem, Machilipatnam, Krishna Dist, Andhra Pradesh, India Pincode-521366
+                        </a>
+                    </div>
+        
+                    <!-- Right Side - Form -->
+                    <div class="col-md-6">
+                        <div class="mt-4" id="form-container">
+                            
+                            <form class="feedback-form" action="/send-feedback" method="post">
+                                <h3>Feedback Form</h3>
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" required><br>
+        
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required><br>
+        
+                                <label for="message">Message:</label>
+                                <textarea id="feedback" name="feedback" class="form-control" rows="4" required></textarea><br>
+        
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    {% if alert %}
+    <script type="text/javascript">
+        showAlert("{{ alert }}");
+    </script>
+    {% endif %}
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for scrolling to sections -->
+    <script>
+        // Cursor Tracking
+            const cursor = document.getElementById('cursor');
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.pageX}px`;
+                cursor.style.top = `${e.pageY}px`;
+            });
+
+            // Scroll into section with smooth animation
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                    });
+                }
+            }
+
+            // Content Visibility on Load
+            window.addEventListener('load', () => {
+                const sections = document.querySelectorAll('.section-content');
+                sections.forEach(section => {
+                    section.classList.add('visible');
+                });
+            });
+
+            // Image Modal
+            function openImageModal(imageSrc) {
+                const modal = document.getElementById('imageModal');
+                const modalImage = document.getElementById('modalImage');
+                modal.style.display = 'flex';
+                modalImage.src = imageSrc;
+            }
+
+            function closeModal() {
+                const modal = document.getElementById('imageModal');
+                modal.style.display = 'none';
+            }
+
+   
+
+    </script>
+</body>
+
+</html>
