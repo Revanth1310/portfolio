@@ -1,0 +1,242 @@
+* {
+    color: aliceblue;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: block; /* change from flex to block */
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: #000; /* optional: keep stars visible */
+}
+        /* Modal overlay */
+        #imageModal {
+    display: none; /* default */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    flex-direction: column;
+}
+
+
+        /* Modal image */
+        .modal-content {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+.tasks img{
+  min-height: auto;
+  max-width: 500px;
+}
+
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+
+
+
+
+
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .internship {
+    color: aliceblue;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .header img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .tasks {
+    color: aliceblue;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+  }
+
+  .tasks ul {
+    list-style: disc inside;
+    margin-top: 10px;
+    color: #333;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .company-name {
+      font-size: 1.2rem;
+    }
+  }
+
+  #starsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+#contact{
+    padding-left: 40px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.contact-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  color: white;
+  font-size: 18px;
+}
+
+#form-container {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #47474a, #35373b);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.9);
+  padding: 30px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+}
+
+#contact img {
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+#contact a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 8px 0;
+}
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #form-container {
+    width: 100%;
+    padding: 15%;
+    
+  }
+}
+form label {
+  font-size: 1.2rem;          /* Larger label text */
+  margin-bottom: 5px;
+  display: block;
+  color: white;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  font-size: 1.1rem;          /* Larger input text */
+  padding: 12px 14px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+form input[type="submit"] {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+
