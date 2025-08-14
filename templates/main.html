@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--My css and js files-->
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../scripts/index.js" defer></script> 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div id="cursor"></div>
+    <canvas id="starsCanvas"></canvas>
+    <div id="main">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
+            <a class="navbar-brand">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" onclick="scrollToSection('home'); return false;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" onclick="scrollToSection('about'); return false;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" onclick="scrollToSection('contact'); return false;">Contact</a>
+                    </li>   
+                    <li class="nav-item">
+                       <a  class="nav-link" href="interenships.html">Internships</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="downloadPDF()">Resume</a>
+                    </li>            
+                </ul>
+            </div>
+        </nav>
+        <!-- Model for Profile  Image -->
+        <div class="container-fluid" id="home">
+            <div class="row">
+                <!-- Left frame (Profile Info) -->
+                <div class="col-md-6 col-12 frame"><br><br><br>
+                    <div id="profile">
+                        <p>Hello, I'm<br><strong>Chandika Purna Revanth</strong></p>
+                        <p>AI/ML Enthusiast | Python Developer<br>SIH2024 Finalist</p>
+                        <a href="#projects" onclick="scrollToSection('projects'); return false;">View My Work</a>
+                        <div class="link-center">
+            <a href="interenships.html">Internships</a>
+        </div>  
+                    </div>
+                </div>
+                <!-- Right frame (Profile Image) -->
+                <div class="col-md-6 col-12 frame">
+                    <div id="profile-image">
+                        <img class="img-fluid" src="../static/images/revanth.jpg" alt="Revanth">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About me man -->
+        <div id="about">
+            <div class="tabout"><br>
+                <h1 class="text-center" style="font-weight: bold;">About Me</h1>
+                <p>
+                    I'm a student specializing in Artificial Intelligence and Machine Learning, passionate about creating intelligent solutions and designing user-friendly applications. 
+                    I am deeply passionate about building innovative solutions that can make a meaningful impact on society. My curiosity drives me to explore new ideas, and I'm always eager to learn and create. 
+                    With a strong desire to contribute positively, I'm also interested in starting my own startup, where I can bring my vision to life and develop technologies that can benefit people on a larger scale.
+                </p>
+            </div>
+        </div>
+        <br>
+        
+
+        <h1 class="text-center" id="achieve-head">Achievements</h1>
+        <div id="achieve" class="mt-4">
+            <img src="../static/images/image1.jpg" alt="Achievement 1" onclick="openImageModal(this.src)">
+            <img src="../static/images/image2.jpg" alt="Achievement 2" onclick="openImageModal(this.src)">
+            <img src="../static/images/image3.jpg" alt="Achievement 3" onclick="openImageModal(this.src)">
+            <img src="../static/images/image4.jpg" alt="Achievement 4" onclick="openImageModal(this.src)">
+            <img src="../static/images/image5.jpg" alt="Achievement 5" onclick="openImageModal(this.src)">
+            <img src="../static/images/image6.jpg" alt="Achievement 6" onclick="openImageModal(this.src)">
+            <img src="../static/images/image7.jpg" alt="Achievement 7" onclick="openImageModal(this.src)">
+            <img src="../static/images/image8.jpg" alt="Achievement 8" onclick="openImageModal(this.src)">
+            <img src="../static/images/image9.jpg" alt="Achievement 9" onclick="openImageModal(this.src)">
+            <img src="../static/images/image11.jpg" alt="Achievement 11" onclick="openImageModal(this.src)">
+            <img src="../static/images/image12.jpg" alt="Achievement 12" onclick="openImageModal(this.src)">
+            
+            <img src="../static/images/image14.jpg" alt="Achievement 14" onclick="openImageModal(this.src)">
+            <img src="../static/images/image15.jpg" alt="Achievement 15" onclick="openImageModal(this.src)">
+            <img src="../static/images/image16.jpg" alt="Achievement 16" onclick="openImageModal(this.src)">
+            <img src="../static/images/image17.jpg" alt="Achievement 17" onclick="openImageModal(this.src)">
+            
+        </div>
+
+        <!-- Modal HTML -->
+        <div id="imageModal">
+            <span class="close" onclick="closeModal()">&#x2716;</span>
+            <img id="modalImage" class="modal-content" src="" alt="Full Achievement">
+        </div>
+     
+        
+            <!--Projects i've Done-->
+        <div id="projects"><br><br>
+            <h1 class="text-center">Projects</h1>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>VQ Answering</h3>
+                            <img src="../static/images/vqa.png" alt="VQA">
+                        </div>
+                        <div class="card-back">
+                            <p>Visual Question Answering (VQA) is an AI system that answers questions about images using computer vision and NLP.</p>
+                            <a href="https://github.com/Revanth1310/vqa.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Project 2 -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Chatbot</h3>
+                            <img src="../static/images/chatbot.png" alt="Chatbot">
+                        </div>
+                        <div class="card-back">
+                            <p>A chatbot is an AI-driven software application designed to simulate conversation with users, either through text or voice. It can automate responses, answer queries, and perform tasks by understanding and interpreting user inputs, providing real-time assistance and interaction across various platforms, such as websites, messaging apps, and customer support systems.</p>
+                            <p>View on GitHub</p>
+                            <a href="https://github.com/Revanth1310/AI_telegram-bot.git">Telegram Bot</a>
+                            <a href="https://github.com/Revanth1310/chatbot.git">Bot Using NLP</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3: Object Detection -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Object Detection</h3>
+                            <img src="../static/images/detection.jpg" alt="Object Detection">
+                        </div>
+                        <div class="card-back">
+                            <p>Object detection is a computer vision technique that identifies and locates objects within images or videos using bounding boxes.</p>
+                            <a href="https://github.com/Revanth1310/object-detection.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Project 4: Online Election System -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Online Election System</h3>
+                        <img src="../static/images/voting.jpeg" alt="Election System"> 
+                        </div>
+                        <div class="card-back">
+                            <p>An online election system is a digital platform that enables the secure and efficient conduct of elections over the internet. It allows voters to cast their ballots remotely, with features like voter authentication, secure vote transmission, and real-time vote tallying. These systems aim to increase voter participation, reduce costs, and provide accurate, transparent, and timely election results while maintaining election integrity.</p>
+                            <a href="https://github.com/Revanth1310/Election.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5: NLP Chatbot -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>NLP Chatbot</h3>
+                            <img src="../static/images/nlp.jpeg" alt="NLP Chatbot">
+                        </div>
+                        <div class="card-back">
+                            <p>A chatbot that uses Natural Language Processing (NLP) techniques to understand and respond to user inputs intelligently.</p>
+                            <a href="https://github.com/Revanth1310/NLP_proj.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            <!-- Project 6: HydroHub -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>HydroHub</h3>
+                            <img src="../static/images/hydrohub.jpg" alt="HydroHub">
+                        </div>
+                        <div class="card-back">
+                            <p>HydroHub is a web platform designed to provide water-related information, manage resources efficiently, and promote sustainable water usage through user interaction and real-time data.</p>
+                            <a href="https://github.com/Revanth1310/HydroHub.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+        <!-- Skills of mine -->
+        <div id="skills"class="mt-4"><br><br>
+            <h1 class="text-center">Skills</h1> 
+            <div id="skill-set" >  
+                <img src="../static/images/python.jpg" alt="Python"  >
+                <img src="../static/images/ml.jpg" alt="Machine Learning" >    
+                <img src="../static/images/pandas.webp" alt="Pandas" >
+                <img src="../static/images/numpy.jpg" alt="Numpy"  >
+                <img src="../static/images/keras.jpg" alt="Keras" >
+                <img src="../static/images/yolo.jpg" alt="Olo"  >       
+            </div>
+        </div><br><br>
+    </div>
+    <!-- Header Bar -->
+    
+    
+    <div id="contact"><br><br>
+        <h1 class="text-center">Contact</h1>
+        <div class="container-fluid">
+            <div class="mt-4" >
+                <div class="row">
+                    <!-- Left Side - Contact Info -->
+                    <div class="col-md-6">
+                        <h3>Contact Info</h3>
+                        <a href="mailto:revanthchandika@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you.">
+                            <img src="../static/images/email.png" alt="Email Icon"> revanthchandika@gmail.com
+                        </a><br>
+                        <a href="tel:+916302321665">
+                            <img src="../static/images/phone.png" alt="Phone Icon"> +91 6302321665
+                        </a><br>
+                        <a>
+                            <img src="../static/images/location.jpeg" alt="Location Icon">
+                            2-138, Chittipalem, Machilipatnam, Krishna, Andhra Pradesh, India - 521366
+                        </a>
+                    </div>
+                    <!-- Right Side - Form -->
+                    <div class="col-md-6">
+                        <div class="mt-4" id="form-container">
+                            <form class="feedback-form" onsubmit="sendMail(event)">
+                                <h3 style="align-items: center; justify-content: center; display: flex; ">Feedback Form</h3>
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" required><br>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required><br>
+                                <label for="message">Message:</label>
+                                <textarea id="feedback" name="feedback" class="form-control" rows="4" required></textarea><br>
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!--contact details -->
+       
+    <footer class="text-center mt-5">
+        <p>&copy; 2025 Chandika Purna Revanth | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+
