@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects</title>
+  <style>
+  .container {
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 100px;
+            
+}
+.card{
+    width:320px;
+    height:450px;
+    perspective:1000px;
+}
+.card-inner {
+         width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        color: #ff9800;
+        font-weight: 500;
+}
+.card.flipped .card-inner {
+        transform: rotateY(180deg);
+}
+.card-front, .card-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 10px;
+        gap: 20px;
+        padding: 15px;
+        text-align: center;
+        background-color: transparent;
+}
+
+.card-front img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.card-front h3{
+    color:#ff9800;
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.card-back {
+            
+        transform: rotateY(180deg);
+        padding: 20px;
+        border: 2px solid #ccc;
+          
+}
+.card-back p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        text-align: justify;
+}
+.card-back a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+}
+.card-front img:hover{
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+}
+#starsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;  /* Keep behind content */
+    pointer-events: none; /* Allow interaction with elements */
+}canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container{
+    width: 100%;
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.container h1{
+    text-align: center;
+    color: #1968fb;
+    font-size: 42px;
+    
+    letter-spacing: 2px;
+}.grid{
+    display:grid;
+    grid-template-columns:repeat(4,300px);
+    justify-content:center;
+    gap:70px 70px;
+}
+@media(max-width:1100px){
+
+.grid{
+grid-template-columns:repeat(2,320px);
+}
+
+}
+
+@media(max-width:700px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.container h1{
+font-size:42px;
+}
+
+}
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:40px auto;
+}
+
+</style>
+  </head>
+<body>
+    <canvas id="starsCanvas"></canvas>
+  <div class="container">
+    <h1>My Projects</h1>
+  <div class="grid">
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+                        <div class="card-front">
+                            <h3>VQ Answering</h3>
+                            <img src="../static/images/vqa.png" alt="VQA">
+                        </div>
+                        <div class="card-back">
+                            <p>Visual Question Answering (VQA) is an AI system that answers questions about images using computer vision and NLP.</p>
+                            <a href="https://github.com/Revanth1310/vqa.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Chatbot</h3>
+                            <img src="../static/images/chatbot.png" alt="Chatbot">
+                        </div>
+                        <div class="card-back">
+                            <p>A chatbot is an AI-driven software application designed to simulate conversation with users, either through text or voice. It can automate responses, answer queries, and perform tasks by understanding and interpreting user inputs, providing real-time assistance and interaction across various platforms, such as websites, messaging apps, and customer support systems.</p>
+                            <p>View on GitHub</p>
+                            <a href="https://github.com/Revanth1310/AI_telegram-bot.git">Telegram Bot</a>
+                            <a href="https://github.com/Revanth1310/chatbot.git">Bot Using NLP</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Object Detection</h3>
+                            <img src="../static/images/detection.jpg" alt="Object Detection">
+                        </div>
+                        <div class="card-back">
+                            <p>Object detection is a computer vision technique that identifies and locates objects within images or videos using bounding boxes.</p>
+                            <a href="https://github.com/Revanth1310/object-detection.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Online Election System</h3>
+                        <img src="../static/images/voting.jpeg" alt="Election System"> 
+                        </div>
+                        <div class="card-back">
+                            <p>An online election system is a digital platform that enables the secure and efficient conduct of elections over the internet. It allows voters to cast their ballots remotely, with features like voter authentication, secure vote tranaission, and real-time vote tallying. These systems aim to increase voter participation, reduce costs, and provide accurate, transparent, and timely election results while maintaining election integrity.</p>
+                            <a href="https://github.com/Revanth1310/Election.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>NLP Chatbot</h3>
+                            <img src="../static/images/nlp.jpeg" alt="NLP Chatbot">
+                        </div>
+                        <div class="card-back">
+                            <p>A chatbot that uses Natural Language Processing (NLP) techniques to understand and respond to user inputs intelligently.</p>
+                            <a href="https://github.com/Revanth1310/NLP_proj.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>HydroHub</h3>
+                            <img src="../static/images/hydrohub.jpg" alt="HydroHub">
+                        </div>
+                        <div class="card-back">
+                            <p>HydroHub is a web platform designed to provide water-related information, manage resources efficiently, and promote sustainable water usage through user interaction and real-time data.</p>
+                            <a href="https://github.com/Revanth1310/HydroHub.git" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>SchemeAssist</h3>
+                            <img src="../static/images/scheme.jpg" alt="SchemeAssist">
+                        </div>
+                        <div class="card-back">
+                            <p>Scheme Assist is an AI-powered platform that helps citizens easily discover, understand, and apply for government welfare schemes. It provides personalized scheme recommendations, eligibility checking, required document guidance, and step-by-step application support, making government benefits more accessible to everyone.</p>
+                            <a href="https://github.com/Revanth1310/scheme-assist" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Career Assistant</h3>
+                            <img src="../static/images/career.jpg" alt="Career Assistant">
+                        </div>
+                        <div class="card-back">
+                            <p>The Career Assistant is an Agentic AI-powered tool designed to help users navigate their career paths, providing personalized advice, job recommendations, and skill development suggestions.</p>
+                            <a href="https://github.com/Revanth1310/CarrerAssistant" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>AgriBot</h3>
+                            <img src="../static/images/agribot.jpg" alt="AgriBot">
+                        </div>
+                        <div class="card-back">
+                            <p>AgriBot is an AI-powered agricultural assistant designed to help farmers with crop management, pest control, and yield optimization.Takes Soil Health Monitoring and Provides Actionable Insights for Improved Farming Practices.</p>
+                            <a href="https://github.com/Revanth1310/agri-bot" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+  </div>
+  </div>
+
+  <script>
+    function flipCard(card) {
+      document.querySelectorAll(".card").forEach(c => {
+        if (c !== card) c.classList.remove("flipped");
+      });
+      card.classList.toggle("flipped");
+    }
+    // ===================== Star Background Animation =====================
+const canvas = document.getElementById('starsCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+const starCount = 500;
+const centerX = canvas.width * 0.9;
+const centerY = canvas.height / 2;
+
+class Star {
+    constructor() { this.reset(); }
+    reset() {
+        this.x = (Math.random() - 0.5) * canvas.width;
+        this.y = (Math.random() - 0.5) * canvas.height;
+        this.z = Math.random() * canvas.width;
+        this.speed = 2;
+    }
+    update() {
+        this.z -= this.speed;
+        if (this.z <= 0) this.reset();
+        this.draw();
+    }
+    draw() {
+        let x = (this.x / this.z) * centerX + centerX;
+        let y = (this.y / this.z) * centerY + centerY;
+        let size = (1 - this.z / canvas.width) * 4;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.closePath();
+    }
+}
+function initStars() {
+    for (let i = 0; i < starCount; i++) stars.push(new Star());
+}
+function animateStars() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(star => star.update());
+    requestAnimationFrame(animateStars);
+}
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+initStars();
+animateStars();
+  </script>
+</body>
+</html>
