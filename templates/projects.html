@@ -4,142 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects</title>
-  <style>
-  .container {
-        
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 100px;
-            
-}
-.card{
-    width:320px;
-    height:450px;
-    perspective:1000px;
-}
-.card-inner {
-         width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 0.6s;
-        color: #ff9800;
-        font-weight: 500;
-}
-.card.flipped .card-inner {
-        transform: rotateY(180deg);
-}
-.card-front, .card-back {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        border-radius: 10px;
-        gap: 20px;
-        padding: 15px;
-        text-align: center;
-        background-color: transparent;
-}
+<link rel="stylesheet" href="../static/projects.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--My css and js files-->
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../scripts/index.js" defer></script> 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-.card-front img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:10px;
-}
-.card-front h3{
-    color:#ff9800;
-    font-size:30px;
-    margin-bottom:18px;
-}
-
-.card-back {
-            
-        transform: rotateY(180deg);
-        padding: 20px;
-        border: 2px solid #ccc;
-          
-}
-.card-back p {
-        font-size: 15px;
-        margin-bottom: 10px;
-        text-align: justify;
-}
-.card-back a {
-        display: inline-block;
-        margin-top: 10px;
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-}
-.card-front img:hover{
-        transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
-}
-#starsCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;  /* Keep behind content */
-    pointer-events: none; /* Allow interaction with elements */
-}canvas {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.container{
-    width: 100%;
-    max-width: 1400px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-.container h1{
-    text-align: center;
-    color: #1968fb;
-    font-size: 42px;
-    
-    letter-spacing: 2px;
-}.grid{
-    display:grid;
-    grid-template-columns:repeat(4,300px);
-    justify-content:center;
-    gap:70px 70px;
-}
-@media(max-width:1100px){
-
-.grid{
-grid-template-columns:repeat(2,320px);
-}
-
-}
-
-@media(max-width:700px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.container h1{
-font-size:42px;
-}
-
-}
-.container{
-    width:95%;
-    max-width:1400px;
-    margin:40px auto;
-}
-
-</style>
   </head>
 <body>
     <canvas id="starsCanvas"></canvas>
@@ -166,7 +43,6 @@ font-size:42px;
                         </div>
                         <div class="card-back">
                             <p>A chatbot is an AI-driven software application designed to simulate conversation with users, either through text or voice. It can automate responses, answer queries, and perform tasks by understanding and interpreting user inputs, providing real-time assistance and interaction across various platforms, such as websites, messaging apps, and customer support systems.</p>
-                            <p>View on GitHub</p>
                             <a href="https://github.com/Revanth1310/AI_telegram-bot.git">Telegram Bot</a>
                             <a href="https://github.com/Revanth1310/chatbot.git">Bot Using NLP</a>
                         </div>
@@ -258,64 +134,52 @@ font-size:42px;
                 </div>
   </div>
   </div>
+<div id="contact"><br><br>
+        <h1 class="text-center">Contact</h1>
+        <div class="container-fluid">
+            <div class="mt-4" >
+                <div class="row">
+                    <!-- Left Side - Contact Info -->
+                    <div class="col-md-6">
+                        <h3>Contact Info</h3>
+                        <a href="mailto:revanthchandika@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you.">
+                            <img src="../static/images/email.png" alt="Email Icon"> revanthchandika@gmail.com
+                        </a><br>
+                        <a href="tel:+916302321665">
+                            <img src="../static/images/phone.png" alt="Phone Icon"> +91 6302321665
+                        </a><br>
+                        <a>
+                            <img src="../static/images/location.jpeg" alt="Location Icon">
+                            2-138, Chittipalem, Machilipatnam, Krishna, Andhra Pradesh, India - 521366
+                        </a>
+                    </div>
+                    <!-- Right Side - Form -->
+                    <div class="col-md-6">
+                        <div class="mt-4" id="form-container">
+                            <form class="feedback-form" onsubmit="sendMail(event)">
+                                <h3 style="align-items: center; justify-content: center; display: flex; ">Feedback Form</h3>
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" required><br>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required><br>
+                                <label for="subject">Subject:</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required><br>
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" class="form-control" rows="4" required></textarea><br>
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!--contact details -->
+       
+    <footer class="text-center mt-5">
+        <p>&copy; 2025 Chandika Purna Revanth | All Rights Reserved</p>
+    </footer>
+  <script src="../scripts/projects.js"></script>
 
-  <script>
-    function flipCard(card) {
-      document.querySelectorAll(".card").forEach(c => {
-        if (c !== card) c.classList.remove("flipped");
-      });
-      card.classList.toggle("flipped");
-    }
-    // ===================== Star Background Animation =====================
-const canvas = document.getElementById('starsCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const stars = [];
-const starCount = 500;
-const centerX = canvas.width * 0.9;
-const centerY = canvas.height / 2;
-
-class Star {
-    constructor() { this.reset(); }
-    reset() {
-        this.x = (Math.random() - 0.5) * canvas.width;
-        this.y = (Math.random() - 0.5) * canvas.height;
-        this.z = Math.random() * canvas.width;
-        this.speed = 2;
-    }
-    update() {
-        this.z -= this.speed;
-        if (this.z <= 0) this.reset();
-        this.draw();
-    }
-    draw() {
-        let x = (this.x / this.z) * centerX + centerX;
-        let y = (this.y / this.z) * centerY + centerY;
-        let size = (1 - this.z / canvas.width) * 4;
-        ctx.beginPath();
-        ctx.arc(x, y, size, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-        ctx.closePath();
-    }
-}
-function initStars() {
-    for (let i = 0; i < starCount; i++) stars.push(new Star());
-}
-function animateStars() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    stars.forEach(star => star.update());
-    requestAnimationFrame(animateStars);
-}
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-initStars();
-animateStars();
-  </script>
 </body>
 </html>

@@ -1,16 +1,11 @@
-* {
-    color: aliceblue;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+
 
   body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: block; /* change from flex to block */
   padding: 40px 20px;
   min-height: 100vh;
-  background-color: #000; /* optional: keep stars visible */
+  background-color: #000 !important; /* optional: keep stars visible */
 }
         /* Modal overlay */
         #imageModal {

@@ -62,24 +62,44 @@ initStars();
 animateStars();
 
 // ===================== EmailJS Feedback =====================
-(function () {
-    emailjs.init("w2w5HTzwBKCAQYLYv");
-})();
+
 function sendMail(event) {
     event.preventDefault();
-    const params = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        feedback: document.getElementById("feedback").value,
-    };
-    emailjs.send("service_04gmhjm", "template_ags9mzu", params)
-        .then(() => {
-            alert("Email Sent Successfully!");
-            document.querySelector(".feedback-form").reset();
-        })
-        .catch(() => {
-            alert("Failed to Send Email. Please try again!");
-        });
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const receiver = "revanthchandika@gmail.com";
+
+    const body = `Hi,
+
+My name is ${name} (${email}).
+
+${message}
+
+Regards,
+${name}`;
+
+    const mailto =
+        `mailto:${receiver}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const gmailURL =
+        `https://mail.google.com/mail/?view=cm&fs=1` +
+        `&to=${encodeURIComponent(receiver)}` +
+        `&su=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+    // Try to open the default mail app
+    window.location.href = mailto;
+
+    // Fallback to Gmail after 1 second
+    setTimeout(() => {
+        window.open(gmailURL, "_blank");
+    }, 1000);
+
+    event.target.reset();
 }
 
 // ===================== Cursor Tracker =====================

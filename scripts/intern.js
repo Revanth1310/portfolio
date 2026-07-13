@@ -36,7 +36,7 @@ function toggleTasks(internshipElement) {
   const centerX = canvas.width * 0.9;
   const centerY = canvas.height / 2;
   const stars = [];
-  const starCount = 200;
+  const starCount = 500;
 
   class Star {
     constructor() {
@@ -97,25 +97,43 @@ function toggleTasks(internshipElement) {
     })();
 
     function sendMail(event) {
-        event.preventDefault();  // Prevent form from reloading
+    event.preventDefault();
 
-        const params = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            feedback: document.getElementById("feedback").value,
-        };
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-        const serviceID = "service_04gmhjm";  // Replace with your EmailJS Service ID
-        const templateID = "template_ags9mzu";  // Replace with your EmailJS Template ID
+    const receiver = "revanthchandika@gmail.com";
 
-        emailjs.send(serviceID, templateID, params)
-            .then(function (response) {
-                alert("Email Sent Successfully!");  // Success message
-                document.querySelector(".feedback-form").reset();  // Reset form after sending
-            }, function (error) {
-                alert("Failed to Send Email. Please try again!");  // Error message
-            });
-    }
+    const body = `Hi,
+
+My name is ${name} (${email}).
+
+${message}
+
+Regards,
+${name}`;
+
+    const mailto =
+        `mailto:${receiver}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const gmailURL =
+        `https://mail.google.com/mail/?view=cm&fs=1` +
+        `&to=${encodeURIComponent(receiver)}` +
+        `&su=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+    // Try to open the default mail app
+    window.location.href = mailto;
+
+    // Fallback to Gmail after 1 second
+    setTimeout(() => {
+        window.open(gmailURL, "_blank");
+    }, 1000);
+
+    event.target.reset();
+}
 
 // ===================== Image Modal =====================
 function openImageModal(src) {

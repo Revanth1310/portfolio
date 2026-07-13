@@ -198,6 +198,7 @@ canvas {
 #profile {
     text-align: left;
     font-size: 40px;
+    margin-top: 200px;
 }
 #profile p {
     margin: 10px 0;
