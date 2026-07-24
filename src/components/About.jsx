@@ -6,7 +6,7 @@ export default function About() {
           About Me
         </h1>
         <p className="text-justify text-xl leading-relaxed italic md:text-2xl">
-          I'm a student specializing in Artificial Intelligence and Machine Learning, passionate
+          I'm a Graduate specialized in Artificial Intelligence and Machine Learning, passionate
           about creating intelligent solutions and designing user-friendly applications. I am
           deeply passionate about building innovative solutions that can make a meaningful impact
           on society. My curiosity drives me to explore new ideas, and I'm always eager to learn
