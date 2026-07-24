@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-accent-cyan: #26ccf5;
+  --color-accent-orange: #ff9800;
+  --color-panel-from: #47474a;
+  --color-panel-to: #35373b;
+  --font-display: "Georgia", "Times New Roman", Times, serif;
+  --font-heading: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: var(--font-display);
+  overflow-x: hidden;
+}
+
+/* ===================== Starfield canvas ===================== */
+#starsCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===================== Custom cursor dot ===================== */
+#cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  background: rgba(38, 204, 245, 0.55);
+  mix-blend-mode: screen;
+  z-index: 9998;
+}
+
+@media (max-width: 768px) {
+  #cursor {
+    display: none;
+  }
+}
+
+/* ===================== Reveal-on-load sections ===================== */
+.section-content {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== Flip cards ===================== */
+.card {
+  perspective: 1200px;
+}
+
+.card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* ===================== Internship accordion ===================== */
+.internship-tasks {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.internship.active .internship-tasks {
+  max-height: 2000px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .section-content,
+  .card-inner,
+  .internship-tasks,
+  #cursor {
+    transition: none !important;
+    animation: none !important;
+  }
+  .section-content {
+    opacity: 1;
+    transform: none;
+  }
+}
