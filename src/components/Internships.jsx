@@ -7,14 +7,14 @@ export default function Internships() {
   const openImageModal = useImageModal();
 
   return (
-    <section id="internships" className="px-6 py-16">
+    <section id="internships" className="px-6 py-20 ">
       <h1
         className="mb-8 text-center text-4xl font-bold text-accent-cyan"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         Internships
       </h1>
-      <div className="mx-auto flex max-w-4xl flex-col gap-4">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4">
         {internships.map((item, index) => {
           const isOpen = openIndex === index;
           return (

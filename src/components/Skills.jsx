@@ -9,13 +9,13 @@ export default function Skills() {
       >
         Skills
       </h1>
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-5">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
         {skills.map((skill) => (
           <img
             key={skill.alt}
             src={skill.src}
             alt={skill.alt}
-            className="h-[220px] w-[260px] rounded-lg border-2 border-white object-cover transition-all duration-300 hover:scale-105 hover:shadow-[1px_2px_5px_2px_rgba(255,255,255,0.8)] md:h-[260px] md:w-[320px]"
+            className="h-[200px] w-full rounded-lg border-2 border-white object-cover transition-all duration-300 hover:scale-105 hover:shadow-[1px_2px_5px_2px_rgba(255,255,255,0.8)] md:h-[220px]"
           />
         ))}
       </div>

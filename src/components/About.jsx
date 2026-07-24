@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section id="about" className="px-6 py-16">
-      <div className="section-content mx-auto max-w-4xl">
+      <div className="section-content mx-auto max-w-7xl">
         <h1 className="mb-8 text-center text-4xl font-bold text-accent-cyan" style={{ fontFamily: "var(--font-heading)" }}>
           About Me
         </h1>

@@ -16,7 +16,7 @@ export default function Projects() {
       >
         Projects
       </h1>
-      <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {visible.map((project) => (
           <ProjectCard
             key={project.title}

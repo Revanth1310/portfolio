@@ -41,7 +41,7 @@ export default function Contact() {
       >
         Contact
       </h1>
-      <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
         <div className="flex flex-col gap-4 text-lg">
           <h3 className="text-2xl font-bold">Contact Info</h3>
           <a

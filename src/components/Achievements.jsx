@@ -12,14 +12,14 @@ export default function Achievements() {
       >
         Achievements
       </h1>
-      <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-8">
+     <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {achievements.map((item) => (
           <img
             key={item.src}
             src={item.src}
             alt={item.alt}
             onClick={() => openImageModal(item.src)}
-            className="h-[220px] w-[300px] cursor-pointer rounded-lg object-cover transition-transform duration-300 hover:scale-105 md:h-[300px] md:w-[400px]"
+            className="h-[260px] w-full cursor-pointer rounded-lg object-cover transition-transform duration-300 hover:scale-105"
           />
         ))}
       </div>
