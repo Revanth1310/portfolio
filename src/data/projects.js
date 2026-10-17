@@ -73,6 +73,20 @@ export const projects = [
       "Object detection is a computer vision technique that identifies and locates objects within images or videos using bounding boxes.",
     links: [{ label: "View on GitHub", href: "https://github.com/Revanth1310/object-detection.git" }],
   },
+  {
+    title: "Local_AI",
+    image: "/images/local.jpg",
+    description:
+      "A privacy-focused local AI chatbot and control center built to run an LLM locally through Ollama, with a persistent long-term memory system, semantic memory search, conversation storage, and an offline-only safety controller.The project is designed around the idea: Run the AI locally, keep user memory locally, and prevent the local model from running while Internet connectivity is available.The application currently uses Qwen3 4B through Ollama and is designed to work on CPU-based systems.",
+    links: [{ label: "View on GitHub", href: "https://github.com/Revanth1310/Local_AI .git" }],
+  },
+  {
+    title: "Bing_Automations",
+    image: "/images/local.jpg",
+    description:
+      "Automation scripts for Bing Search, including a script to automate the process of sending messages to Bing Browser and receiving responses. The script uses the Selenium library to control a web browser and interact with the Bing Browser. It can be used to automate repetitive tasks, such as sending messages to Bing and receiving responses.I have done for to automate my daily repetative task.",
+    links: [{ label: "View on GitHub", href: "https://github.com/Revanth1310/bing_automation" }],
+  }
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);
